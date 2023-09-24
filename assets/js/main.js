@@ -118,3 +118,5 @@ dots.forEach((dot, index) => {
 
 //     requestAnimationFrame(scroll);
 // }
+
+
