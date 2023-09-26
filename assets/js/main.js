@@ -75,48 +75,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-const dots = document.querySelectorAll('.dots-navigation');
+const dots = document.querySelectorAll('.dots-navigation li'); // Select the individual dot elements
 const sections = document.querySelectorAll('section');
 
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
         sections[index].scrollIntoView({ behavior: 'smooth' });
-        
+
         // Remove the 'active' class from all dots
         dots.forEach((dot) => {
             dot.classList.remove('active');
         });
-        
+
         // Add the 'active' class to the clicked dot
         dot.classList.add('active');
     });
 });
-
-
-// const box1 = document.querySelector('.banner');
-// const box2 = document.querySelector('section');
-
-// box1.addEventListener('wheel', (event) => {
-//     if (event.deltaY > 0) {
-//         // Scrolling down, so scroll to box2 with a faster scroll speed
-//         scrollToSection(box2, 200); // You can adjust the scroll speed (200 in this example)
-//     }
-// });
-
-// function scrollToSection(targetSection, scrollAmount) {
-//     const targetScrollTop = targetSection.offsetTop;
-//     const currentScrollTop = window.scrollY;
-//     const scrollStep = Math.abs(targetScrollTop - currentScrollTop) / scrollAmount;
-//     const direction = targetScrollTop > currentScrollTop ? 1 : -1;
-
-//     function scroll() {
-//         if ((direction === 1 && window.scrollY < targetScrollTop) || (direction === -1 && window.scrollY > targetScrollTop)) {
-//             window.scrollTo(0, window.scrollY + direction * scrollStep);
-//             requestAnimationFrame(scroll);
-//         }
-//     }
-
-//     requestAnimationFrame(scroll);
-// }
-
 
